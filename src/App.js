@@ -1,6 +1,7 @@
 import './App.css';
 import { useEffect, useState } from "react";
 import Json from './data.json';
+import Card from './components/Card';
 
 function App() {
   //console.log(Data);
@@ -37,32 +38,15 @@ function App() {
 
 
   return (
-    <div>
+    <div className="container m-3">
       {data.map((item, index) => {
-        return (
-          <div key={index}>
-            <h1>{item.name}</h1>
-
-          </div>
-        )
-
+        return <Card
+          key={index}
+          fullName={item.name}
+        ></Card>
       })}
+
     </div>
-
-
-
-    /*     < div >
-          {
-            Data.map((item, index) => {
-              return (
-                <div key={index}>
-                  <h1>{item.username}</h1>
-                </div>
-              )
-    
-            })
-          }
-        </div > */
   );
 }
 
