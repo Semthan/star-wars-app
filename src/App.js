@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Json from './data.json';
 import Card from './components/MyAccordion';
 import axios from 'axios'
@@ -11,6 +11,7 @@ function App() {
   let data2 = Json;
 
   const [apiData, setApiData] = useState(null)
+  const nameForm = useRef(null)
 
   function fetchData() {
 
@@ -26,12 +27,26 @@ function App() {
     setApiData(data);
   }
 
+  const searchFunc = async (searchUrl) => {
+    searchUrl = `https://swapi.dev/api/people/?search=${nameForm.current.firstname.value}`
+    console.log(nameForm.current.firstname.value)
+    const response = await fetch(searchUrl);
+    const data = await response.json();
+    setApiData(data);
+  }
+
   useEffect(() => {
     fetchData();
   }, []);
 
   return (
     <div className="container m-3">
+
+      <form ref={nameForm}>
+        <input label={'first name'} name={'firstname'} />
+      </form>
+      <button onClick={() => searchFunc()}>gett value</button>
+
       {apiData && apiData.results.map((item, index) => {
         return <Card
           key={index}
