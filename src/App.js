@@ -7,7 +7,7 @@ import axios from 'axios'
 function App() {
   //console.log(Data);
 
-  //let data = Json.results;
+  let data = Json.results;
   let data2 = Json;
 
   const [apiData, setApiData] = useState(null)
@@ -15,10 +15,9 @@ function App() {
 
   function fetchData() {
 
-    fetch("http://swapi.dev/api/people")
+    fetch("http://swapi.dev/api/peopl")
       .then(res => res.json())
       .then(data => setApiData(data))
-
   }
 
   const getPage = async (url) => {
@@ -39,24 +38,27 @@ function App() {
     fetchData();
   }, []);
 
+  //apiData && apiData.results
   return (
-    <div className="container m-3">
+    <div className="container m-5">
 
       <form ref={nameForm}>
         <input label={'first name'} name={'firstname'} />
       </form>
       <button onClick={() => searchFunc()}>gett value</button>
 
-      {apiData && apiData.results.map((item, index) => {
-        return <Card
-          key={index}
-          fullName={item.name}
-          gender={item.gender}
-          height={item.height}
-          birth_year={item.birth_year}
-        ></Card>
-      })}
+      <div className="row">
+        {data.map((item, index) => {
+          return <div className="col-6"> <Card
+            key={index}
+            fullName={item.name}
+            gender={item.gender}
+            height={item.height}
+            birth_year={item.birth_year}
+          ></Card></div>
+        })}
 
+      </div>
       {apiData && (apiData.next || apiData.previous) ? (
         <div>
           <button

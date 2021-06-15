@@ -4,7 +4,7 @@ import {Accordion, Card}  from 'react-bootstrap'
 
 export default function MyAccordion({fullName, gender,height,birth_year}) {
     return (
-        <div>
+        <div className="p-2 m-2">
 {/*             <div className="row p-3 border mb-2 border">
                 <Data fullName = {fullName}/>
                 <Data gender = {gender}></Data>
@@ -28,21 +28,21 @@ export default function MyAccordion({fullName, gender,height,birth_year}) {
                     </div>
                     </div>
                 </div>
-                </div> */}
-                <Accordion defaultActiveKey="1">
-                    <Card>
-                        <Accordion.Toggle as={Card.Header} eventKey="0">
-                        <Data fullName = {fullName}/>
-                        </Accordion.Toggle>
-                        <Accordion.Collapse eventKey="0">
-                        <Card.Body>
-                            <Data gender = {gender}></Data>
-                            <Data height = {height}></Data>
-                            <Data birth_year = {birth_year}></Data>
-                            </Card.Body>
-                        </Accordion.Collapse>
-                    </Card>
-                </Accordion>
+                </div> */}               
+                    <Accordion defaultActiveKey="1">                  
+                        <Card  className="text-center">
+                            <Accordion.Toggle as={Card.Header} eventKey="0">
+                            <strong>{fullName}</strong>
+                            </Accordion.Toggle>
+                            <Accordion.Collapse eventKey="0">
+                            <Card.Body>
+                                <p><strong>Gender: </strong>{gender}</p>
+                                <p><strong>height: </strong>{height}</p>
+                                <p><strong>Birth Year: </strong>{birth_year}</p>
+                                </Card.Body>
+                            </Accordion.Collapse>
+                        </Card>
+                    </Accordion>                
         </div>
 
     )
