@@ -11,7 +11,7 @@ function App() {
 
   function fetchData() {
 
-    fetch("http://swapi.dev/api/people")
+    fetch("https://swapi.dev/api/people")
       .then(res => res.json())
       .then(data => setApiData(data))
   }
