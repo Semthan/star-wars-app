@@ -3,6 +3,8 @@ import { useEffect, useState, useRef } from "react";
 import Json from './data.json';
 import Card from './components/MyAccordion';
 import { Button } from 'react-bootstrap'
+import MyHeader from './components/Header'
+import Header from './components/Header';
 
 function App() {
 
@@ -39,8 +41,8 @@ function App() {
 
   //apiData && apiData.results
   return (
-    <div className="container m-5">
-
+    <div className="container mt-1">
+      <Header />
       <form ref={nameForm}>
         <input label={'first name'} name={'firstname'} />
       </form>

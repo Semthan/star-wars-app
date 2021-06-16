@@ -10,3 +10,20 @@ body {
   box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
     0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
 }
+
+#my_title {
+  text-align: center;
+  -webkit-text-fill-color: black;
+  -webkit-text-stroke: 1px yellow;
+}
+
+#my_title > h1 {
+  font-size: 5rem;
+  letter-spacing: 5px;
+}
+
+#my_title > h3 {
+  line-height: 0.1;
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
