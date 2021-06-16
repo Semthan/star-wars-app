@@ -35,26 +35,28 @@ function App() {
     fetchData();
   }, []);
 
-  //apiData && apiData.results
+
   return (
     <div className="container mt-1">
       <MyHeader />
 
-      <div id="search_bar" className="row mt-4 text-center">
-        <div className="col">
+      <div id="search_bar" className="row m-4">
+        <div className="col-2"></div>
+        <div className="col-1"></div>
+        <div className="col-lg-4 mt-2">
           <form ref={nameForm}>
-            <input label={'first name'} name={'firstname'} placeholder="Search for specific character.." />
-
+            <input name={'firstname'} placeholder="Search for specific character.." />
           </form>
-          <div className="col">
-            <button onClick={() => searchFunc()}>Search</button>
-          </div>
         </div>
+        <div className="col-lg-4 mt-2">
+          <button onClick={() => searchFunc()}>Search</button>
+        </div>
+
       </div>
 
       <div className="row">
         {apiData && apiData.results.map((item, index) => {
-          return <div className="col-6"> <Card
+          return <div className="col-lg-6"> <Card
             key={index}
             fullName={item.name}
             gender={item.gender}
@@ -88,7 +90,7 @@ function App() {
           </>
         ) : null}
       </div>
-    </div>
+    </div >
   );
 }
 
