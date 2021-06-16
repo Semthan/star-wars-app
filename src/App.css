@@ -29,3 +29,17 @@ body {
   font-size: 2rem;
   letter-spacing: 2px;
 }
+
+.my_button {
+  width: 250px;
+  height: 50px;
+  color: white;
+  font-size: large;
+  border: 2px solid yellow;
+  border-radius: 25px;
+  background-color: transparent;
+}
+
+.my_button:hover {
+  box-shadow: 1px 1px 10px yellow;
+}

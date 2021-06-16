@@ -2,9 +2,8 @@ import './App.css';
 import { useEffect, useState, useRef } from "react";
 import Json from './data.json';
 import Card from './components/MyAccordion';
-import { Button } from 'react-bootstrap'
 import MyHeader from './components/Header'
-import Header from './components/Header';
+
 
 function App() {
 
@@ -42,7 +41,8 @@ function App() {
   //apiData && apiData.results
   return (
     <div className="container mt-1">
-      <Header />
+      <MyHeader />
+
       <form ref={nameForm}>
         <input label={'first name'} name={'firstname'} />
       </form>
@@ -60,25 +60,26 @@ function App() {
         })}
 
       </div>
-      <div className="row border">
+      <div className="row m-5 text-center">
 
         {apiData && (apiData.next || apiData.previous) ? (
           <>
-            <div className="col-6">
-              <Button variant="outline-success"
+            <div className="col-4">
+              <button className="my_button"
                 disabled={!apiData.previous}
                 onClick={() => getPage(apiData.previous)}
               >
                 Previous page
-              </Button>
+              </button>
             </div>
-            <div className="col-6">
-              <Button variant="outline-success"
+            <div className="col-4"></div>
+            <div className="col-4">
+              <button className="my_button"
                 disabled={!apiData.next}
                 onClick={() => getPage(apiData.next)}
               >
                 Next page
-              </Button>
+              </button>
             </div>
           </>
         ) : null}
