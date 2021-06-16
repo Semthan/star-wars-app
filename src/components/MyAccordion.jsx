@@ -1,6 +1,7 @@
 import React from 'react'
 import Data from './Data'
 import {Accordion, Card}  from 'react-bootstrap'
+import '../App.css';
 
 export default function MyAccordion({fullName, gender,height,birth_year}) {
     return (
@@ -29,8 +30,8 @@ export default function MyAccordion({fullName, gender,height,birth_year}) {
                     </div>
                 </div>
                 </div> */}               
-                    <Accordion defaultActiveKey="1">                  
-                        <Card  className="text-center">
+                    <Accordion defaultActiveKey="1" >                  
+                        <Card className="text-center bg-dark text-white " id="my_accordion">
                             <Accordion.Toggle as={Card.Header} eventKey="0">
                             <strong>{fullName}</strong>
                             </Accordion.Toggle>

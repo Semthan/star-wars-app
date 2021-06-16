@@ -2,6 +2,7 @@ import './App.css';
 import { useEffect, useState, useRef } from "react";
 import Json from './data.json';
 import Card from './components/MyAccordion';
+import { Button } from 'react-bootstrap'
 import axios from 'axios'
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
 
   function fetchData() {
 
-    fetch("http://swapi.dev/api/peopl")
+    fetch("http://swapi.dev/api/people")
       .then(res => res.json())
       .then(data => setApiData(data))
   }
@@ -26,8 +27,8 @@ function App() {
     setApiData(data);
   }
 
-  const searchFunc = async (searchUrl) => {
-    searchUrl = `https://swapi.dev/api/people/?search=${nameForm.current.firstname.value}`
+  const searchFunc = async () => {
+    const searchUrl = `https://swapi.dev/api/people/?search=${nameForm.current.firstname.value}`
     console.log(nameForm.current.firstname.value)
     const response = await fetch(searchUrl);
     const data = await response.json();
@@ -59,22 +60,29 @@ function App() {
         })}
 
       </div>
-      {apiData && (apiData.next || apiData.previous) ? (
-        <div>
-          <button
-            disabled={!apiData.previous}
-            onClick={() => getPage(apiData.previous)}
-          >
-            Previous page
-          </button>
-          <button
-            disabled={!apiData.next}
-            onClick={() => getPage(apiData.next)}
-          >
-            Next page
-          </button>
-        </div>
-      ) : null}
+      <div className="row border">
+
+        {apiData && (apiData.next || apiData.previous) ? (
+          <>
+            <div className="col-6">
+              <Button variant="outline-success"
+                disabled={!apiData.previous}
+                onClick={() => getPage(apiData.previous)}
+              >
+                Previous page
+              </Button>
+            </div>
+            <div className="col-6">
+              <Button variant="outline-success"
+                disabled={!apiData.next}
+                onClick={() => getPage(apiData.next)}
+              >
+                Next page
+              </Button>
+            </div>
+          </>
+        ) : null}
+      </div>
     </div>
   );
 }
