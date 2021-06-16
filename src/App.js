@@ -1,14 +1,10 @@
 import './App.css';
 import { useEffect, useState, useRef } from "react";
-import Json from './data.json';
 import Card from './components/MyAccordion';
 import MyHeader from './components/Header'
 
 
 function App() {
-
-  let data = Json.results;
-  let data2 = Json;
 
   const [apiData, setApiData] = useState(null)
   const nameForm = useRef(null)
