@@ -43,3 +43,23 @@ body {
 .my_button:hover {
   box-shadow: 1px 1px 10px yellow;
 }
+
+#search_bar {
+  padding: 5px;
+}
+
+#search_bar input {
+  border: 2px solid yellow;
+  width: 400px;
+  padding: 5px;
+  border-radius: 25px;
+  background-color: black;
+}
+
+#search_bar button {
+  border: 2px solid yellow;
+  border-radius: 25px;
+  padding: 5px;
+  width: 100px;
+  margin-left: 5px;
+}

@@ -43,10 +43,14 @@ function App() {
     <div className="container mt-1">
       <MyHeader />
 
-      <form ref={nameForm}>
-        <input label={'first name'} name={'firstname'} />
-      </form>
-      <button onClick={() => searchFunc()}>gett value</button>
+      <div id="search_bar" className="row mt-4 text-center">
+        <div className="col">
+          <form ref={nameForm}>
+            <input label={'first name'} name={'firstname'} placeholder="Search for specific character.." />
+            <button onClick={() => searchFunc()}>Search</button>
+          </form>
+        </div>
+      </div>
 
       <div className="row">
         {data.map((item, index) => {
@@ -60,7 +64,7 @@ function App() {
         })}
 
       </div>
-      <div className="row m-5 text-center">
+      <div className="row m-3 text-center">
 
         {apiData && (apiData.next || apiData.previous) ? (
           <>
