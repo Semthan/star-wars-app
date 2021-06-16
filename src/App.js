@@ -3,10 +3,8 @@ import { useEffect, useState, useRef } from "react";
 import Json from './data.json';
 import Card from './components/MyAccordion';
 import { Button } from 'react-bootstrap'
-import axios from 'axios'
 
 function App() {
-  //console.log(Data);
 
   let data = Json.results;
   let data2 = Json;
