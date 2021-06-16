@@ -10,8 +10,9 @@ function App() {
   const nameForm = useRef(null)
 
   function fetchData() {
-
-    fetch("https://swapi.dev/api/people")
+    const url = "http://swapi.dev/api/people"
+    const myUrl = url.replace("http", "https");
+    fetch(myUrl)
       .then(res => res.json())
       .then(data => setApiData(data))
   }
