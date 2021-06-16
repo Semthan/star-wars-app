@@ -17,14 +17,14 @@ function App() {
   }
 
   const getPage = async (url) => {
-    const response = await fetch(url);
+    const myUrl = url.replace("http", "https");
+    const response = await fetch(myUrl);
     const data = await response.json();
     setApiData(data);
   }
 
   const searchFunc = async () => {
     const searchUrl = `https://swapi.dev/api/people/?search=${nameForm.current.firstname.value}`
-    console.log(nameForm.current.firstname.value)
     const response = await fetch(searchUrl);
     const data = await response.json();
     setApiData(data);
