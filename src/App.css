@@ -4,13 +4,15 @@ body {
 }
 
 #my_accordion {
-  border: 5px solid #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
   border-radius: 2rem;
   padding: 0.4em;
-  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
-    0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 1rem yellow,
+    0 0 0.1rem yellow, 0 0 0.5rem yellow, inset 0 0 0.8rem yellow;
 }
 
+/*#bc13fe*/
 #my_title {
   text-align: center;
   -webkit-text-fill-color: black;

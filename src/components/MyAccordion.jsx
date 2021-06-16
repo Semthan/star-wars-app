@@ -7,7 +7,7 @@ export default function MyAccordion({fullName, gender,height,birth_year}) {
     return (
         <div className="p-2 m-2">           
                     <Accordion defaultActiveKey="1" >                  
-                        <Card className="text-center bg-dark text-white " id="my_accordion">
+                        <Card className="text-center text-white " id="my_accordion">
                             <Accordion.Toggle as={Card.Header} eventKey="0">
                             <strong>{fullName}</strong>
                             </Accordion.Toggle>
