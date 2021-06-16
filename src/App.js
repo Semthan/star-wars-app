@@ -47,13 +47,16 @@ function App() {
         <div className="col">
           <form ref={nameForm}>
             <input label={'first name'} name={'firstname'} placeholder="Search for specific character.." />
-            <button onClick={() => searchFunc()}>Search</button>
+
           </form>
+          <div className="col">
+            <button onClick={() => searchFunc()}>Search</button>
+          </div>
         </div>
       </div>
 
       <div className="row">
-        {data.map((item, index) => {
+        {apiData && apiData.results.map((item, index) => {
           return <div className="col-6"> <Card
             key={index}
             fullName={item.name}

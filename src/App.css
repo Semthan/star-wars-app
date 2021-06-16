@@ -54,6 +54,7 @@ body {
   padding: 5px;
   border-radius: 25px;
   background-color: black;
+  color: white;
 }
 
 #search_bar button {
