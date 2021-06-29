@@ -18,8 +18,8 @@ function App() {
   }
 
   const getPage = async (url) => {
-    const myUrl = url.replace("http", "https");
-    const response = await fetch(myUrl);
+    //const myUrl = url.replace("http", "https");
+    const response = await fetch(url);
     const data = await response.json();
     setApiData(data);
   }
